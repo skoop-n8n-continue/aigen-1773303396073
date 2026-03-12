@@ -1,0 +1,576 @@
+/* ============================================================
+   QUALITY ROOTS — "THE BIG STAMP" DEAL PROMO TEMPLATE
+   Canvas: 1920 × 1080  |  Style: Vintage Stamp / Retro Bold
+   ============================================================ */
+
+:root {
+  --teal-bg:    #1A5C5C;
+  --teal-dark:  #0F3A3A;
+  --teal-mid:   #246666;
+  --teal-light: #2E8080;
+  --cream:      #E8DFC8;
+  --cream-mid:  #D5C9A8;
+  --cream-dark: #BFB088;
+  --olive:      #465A38;
+  --olive-lt:   #6A7E52;
+  --text-h:     #262E1C;
+  --text-b:     #3E4E2E;
+  --text-lt:    #6A7A5A;
+  --red-stamp:  #B22820;
+  --red-dark:   #801A14;
+  --red-lite:   #CC3028;
+  --gold:       #C9A84C;
+  --gold-lt:    #E2BF6A;
+  --gold-dk:    #9E7C2C;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: var(--teal-dark);
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* ================================================================
+   SCENE
+   ================================================================ */
+#scene {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================================================================
+   BACKGROUND
+   ================================================================ */
+#background {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/n8n-continue%2Faigen-1773303396073%2Fassets%2Fqr_bg_teal_vintage-1773303953498.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* ================================================================
+   AMBIENT LAYER — corner ornaments, rules, particles
+   ================================================================ */
+#ambient-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.corner-deco {
+  position: absolute;
+  opacity: 0.55;
+}
+.corner-deco.tl { top: 24px;  left: 24px; }
+.corner-deco.tr { top: 24px;  right: 24px; }
+.corner-deco.bl { bottom: 72px; left: 24px; }
+.corner-deco.br { bottom: 72px; right: 24px; }
+
+.ambient-rule {
+  position: absolute;
+  left: 60px; right: 60px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201,168,76, 0.25) 15%,
+    rgba(201,168,76, 0.55) 50%,
+    rgba(201,168,76, 0.25) 85%,
+    transparent
+  );
+}
+.rule-top    { top: 68px; }
+.rule-bottom { bottom: 68px; }
+
+/* Floating gold particle dots */
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+}
+.p1 { top: 18%;  left: 8%; }
+.p2 { top: 70%;  left: 12%; }
+.p3 { top: 30%;  right: 9%; }
+.p4 { top: 75%;  right: 14%; }
+.p5 { top: 50%;  left: 50%; }
+
+/* ================================================================
+   BOTANICAL FOREGROUND
+   ================================================================ */
+#fg-left, #fg-right {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 380px;
+  z-index: 26;
+  pointer-events: none;
+  overflow: hidden;
+}
+#fg-left  { left: 0; }
+#fg-right { right: 0; transform: scaleX(-1); }
+
+#fg-left  .botanical,
+#fg-right .botanical {
+  position: absolute;
+  width: 600px;
+  height: auto;
+  top: -80px;
+  left: -140px;
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+  filter: brightness(0.65) saturate(1.4);
+}
+
+/* ================================================================
+   MAIN STAGE
+   ================================================================ */
+#main-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  padding-bottom: 48px; /* account for footer */
+}
+
+/* ================================================================
+   STAMP WRAPPER — holds the card with shadow
+   ================================================================ */
+#stamp-wrapper {
+  position: relative;
+  filter: drop-shadow(0 50px 80px rgba(0,0,0,0.55))
+          drop-shadow(0 20px 30px rgba(0,0,0,0.35));
+}
+
+/* ================================================================
+   STAMP CARD — the hero element with perforated edges
+   ================================================================ */
+#stamp-card {
+  width: 1100px;
+  height: 660px;
+  position: relative;
+  overflow: visible;
+
+  /* ===== THE STAMP PERFORATION EFFECT =====
+     Radial gradients punch semicircular "holes" out of the cream card,
+     revealing the teal background beneath — just like a real postage stamp */
+  background:
+    /* Left edge perforations */
+    radial-gradient(circle at 0 50%, var(--teal-bg) 13px, transparent 13px)
+      left / 22px 28px repeat-y,
+    /* Right edge perforations */
+    radial-gradient(circle at 100% 50%, var(--teal-bg) 13px, transparent 13px)
+      right / 22px 28px repeat-y,
+    /* Top edge perforations */
+    radial-gradient(circle at 50% 0, var(--teal-bg) 13px, transparent 13px)
+      top / 28px 22px repeat-x,
+    /* Bottom edge perforations */
+    radial-gradient(circle at 50% 100%, var(--teal-bg) 13px, transparent 13px)
+      bottom / 28px 22px repeat-x,
+    /* Card fill */
+    var(--cream);
+}
+
+/* ================================================================
+   CARD TOP BAR
+   ================================================================ */
+#card-topbar {
+  position: absolute;
+  top: 24px;
+  left: 30px;
+  right: 30px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+/* ---- Category Badge (arrow/chevron shape) ---- */
+#category-badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--teal-bg);
+  color: var(--cream);
+  padding: 10px 22px 10px 16px;
+  /* Arrow/chevron clip-path pointing right */
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+.badge-diamond { flex-shrink: 0; }
+
+/* ---- QR Diamond Badge ---- */
+#qr-diamond-badge {
+  display: flex;
+  align-items: center;
+}
+
+/* ================================================================
+   CARD BODY
+   ================================================================ */
+#card-body {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  right: 26px;
+  bottom: 26px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* ================================================================
+   IMAGE PANEL
+   ================================================================ */
+#image-panel {
+  width: 420px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 68px 24px 36px 24px;
+  position: relative;
+}
+
+#image-clip-box {
+  width: 360px;
+  height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  clip-path: inset(100% 0% 0% 0%); /* GSAP animates this to inset(0% 0% 0% 0%) */
+}
+
+#product-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 48px rgba(0,0,0,0.28));
+}
+
+/* ================================================================
+   PANEL DIVIDER
+   ================================================================ */
+#panel-divider {
+  width: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 36px 0;
+  flex-shrink: 0;
+}
+
+.divider-line {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--cream-dark) 30%, var(--cream-dark) 70%, transparent);
+  opacity: 0.7;
+}
+
+.divider-diamond {
+  margin: 8px 0;
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   INFO PANEL
+   ================================================================ */
+#info-panel {
+  flex: 1;
+  padding: 80px 40px 30px 44px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ---- Brand row ---- */
+#brand-row {
+  margin-bottom: 6px;
+  opacity: 0;
+}
+
+#brand-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-style: italic;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-lt);
+}
+
+/* ---- Product name ---- */
+#name-row {
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+#product-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 30px;
+  line-height: 1.22;
+  color: var(--text-h);
+  max-height: 5em;
+  overflow: hidden;
+  /* chars will be split + animated individually */
+}
+
+/* ---- Meta row: strain + THC chips ---- */
+#meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+#strain-pill {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--olive);
+  padding: 5px 13px;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+#thc-chip {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal-bg);
+  background: var(--gold);
+  padding: 5px 13px;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+/* ================================================================
+   PRICE BLOCK
+   ================================================================ */
+#price-block {
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1.5px solid var(--cream-dark);
+}
+
+/* ---- Was (original) price row ---- */
+#was-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.price-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.now-eyebrow {
+  color: var(--red-stamp);
+}
+
+#was-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+#was-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  color: var(--text-b);
+  line-height: 1;
+  opacity: 0.65;
+}
+
+/* Strikethrough bar — animated via scaleX */
+#strike-bar {
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  right: -5px;
+  height: 5px;
+  background: var(--red-stamp);
+  border-radius: 3px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  translate: 0 -2px;
+}
+
+/* ---- Now (deal) price row ---- */
+#now-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+}
+
+#now-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 108px;
+  color: var(--red-stamp);
+  line-height: 0.88;
+  letter-spacing: -2px;
+}
+
+/* ================================================================
+   DEAL STAMP — circular red rubber stamp overlay
+   Positioned over the image panel so deal prices stay fully legible
+   ================================================================ */
+#deal-stamp {
+  position: absolute;
+  width: 252px;
+  height: 252px;
+  /* Center horizontally over image panel (panel width ~420px, card left margin 26px) */
+  left: 112px;
+  bottom: 32px;
+  transform-origin: center center;
+  z-index: 30;
+  /* Hidden initially — revealed by JS */
+  opacity: 0;
+}
+
+#stamp-outer-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--red-stamp);
+  box-shadow:
+    0 0 0 6px var(--red-dark),
+    0 0 0 10px var(--red-stamp),
+    0 12px 40px rgba(178,40,32,0.6),
+    0 4px 16px rgba(0,0,0,0.4);
+}
+
+#stamp-inner-ring {
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  border: 2px dashed rgba(232,223,200,0.35);
+  pointer-events: none;
+}
+
+#stamp-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+  padding: 16px;
+}
+
+.stamp-text-sm {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(232,223,200,0.85);
+  line-height: 1;
+}
+
+.stamp-arc-top {
+  margin-bottom: 2px;
+  border-bottom: 1.5px solid rgba(232,223,200,0.3);
+  padding-bottom: 4px;
+}
+.stamp-arc-bot {
+  margin-top: 2px;
+  border-top: 1.5px solid rgba(232,223,200,0.3);
+  padding-top: 4px;
+}
+
+.stamp-big-pct {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 100px;
+  color: var(--cream);
+  line-height: 0.88;
+  letter-spacing: -3px;
+}
+
+.stamp-big-off {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 54px;
+  color: var(--gold-lt);
+  line-height: 0.85;
+  letter-spacing: 8px;
+  margin-top: -2px;
+}
+
+/* ================================================================
+   FOOTER STRIP — marquee / ticker
+   ================================================================ */
+#footer-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 50px;
+  background: var(--teal-dark);
+  border-top: 1.5px solid rgba(201,168,76,0.35);
+  overflow: hidden;
+  z-index: 40;
+}
+
+#footer-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 28px;
+  padding: 0 28px;
+  white-space: nowrap;
+  /* marquee scrolling via JS */
+}
+
+.fi {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+
+.fi:nth-child(odd) {
+  font-size: 9px;
+  opacity: 0.45;
+}

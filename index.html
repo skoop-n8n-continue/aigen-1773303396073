@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality Roots – Deal Promo</title>
+
+  <!-- GSAP Core + Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/CustomEase.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/DrawSVGPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/MotionPathPlugin.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=m8k3r1">
+</head>
+<body>
+  <div id="scene">
+
+    <!-- Layer 0: Background -->
+    <div id="background"></div>
+
+    <!-- Layer 1: Ambient decorative elements -->
+    <div id="ambient-layer">
+      <!-- Corner diamond ornaments -->
+      <svg class="corner-deco tl" viewBox="0 0 140 140" width="140" height="140">
+        <polygon id="deco-tl-outer" points="70,8 132,70 70,132 8,70" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+        <polygon id="deco-tl-inner" points="70,22 118,70 70,118 22,70" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+        <circle cx="70" cy="8"  r="3" fill="#C9A84C"/>
+        <circle cx="132" cy="70" r="3" fill="#C9A84C"/>
+        <circle cx="70" cy="132" r="3" fill="#C9A84C"/>
+        <circle cx="8"  cy="70" r="3" fill="#C9A84C"/>
+      </svg>
+      <svg class="corner-deco tr" viewBox="0 0 140 140" width="140" height="140">
+        <polygon points="70,8 132,70 70,132 8,70" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+        <polygon points="70,22 118,70 70,118 22,70" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+        <circle cx="70" cy="8"  r="3" fill="#C9A84C"/>
+        <circle cx="132" cy="70" r="3" fill="#C9A84C"/>
+        <circle cx="70" cy="132" r="3" fill="#C9A84C"/>
+        <circle cx="8"  cy="70"  r="3" fill="#C9A84C"/>
+      </svg>
+      <svg class="corner-deco bl" viewBox="0 0 140 140" width="140" height="140">
+        <polygon points="70,8 132,70 70,132 8,70" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+        <polygon points="70,22 118,70 70,118 22,70" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+      </svg>
+      <svg class="corner-deco br" viewBox="0 0 140 140" width="140" height="140">
+        <polygon points="70,8 132,70 70,132 8,70" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+        <polygon points="70,22 118,70 70,118 22,70" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+      </svg>
+
+      <!-- Horizontal rule lines -->
+      <div class="ambient-rule rule-top"></div>
+      <div class="ambient-rule rule-bottom"></div>
+
+      <!-- Floating particle dots -->
+      <div class="particle p1"></div>
+      <div class="particle p2"></div>
+      <div class="particle p3"></div>
+      <div class="particle p4"></div>
+      <div class="particle p5"></div>
+    </div>
+
+    <!-- Layer 2: Botanical foreground left -->
+    <div id="fg-left">
+      <img class="botanical"
+        src="https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/n8n-continue%2Faigen-1773303396073%2Fassets%2Fbotanical_leaves_teal-1773304015702.png"
+        alt="">
+    </div>
+
+    <!-- Layer 3: Main stage — the product card -->
+    <div id="main-stage">
+      <div id="stamp-wrapper">
+        <div id="stamp-card">
+
+          <!-- Card top bar -->
+          <div id="card-topbar">
+
+            <!-- Category badge — left side (arrow shape) -->
+            <div id="category-badge">
+              <svg class="badge-diamond" viewBox="0 0 14 14" width="14" height="14">
+                <polygon points="7,1 13,7 7,13 1,7" fill="#C9A84C"/>
+              </svg>
+              <span id="category-text">GUMMIES</span>
+            </div>
+
+            <!-- Quality Roots diamond badge — right side -->
+            <div id="qr-diamond-badge">
+              <svg viewBox="0 0 180 76" width="180" height="76">
+                <!-- Outer diamond fill -->
+                <polygon points="90,4 176,38 90,72 4,38" fill="#1A5C5C" stroke="#C9A84C" stroke-width="2"/>
+                <!-- Inner ring -->
+                <polygon points="90,12 164,38 90,64 16,38" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+                <!-- Brand name -->
+                <text x="90" y="30" text-anchor="middle"
+                  font-family="'Bebas Neue', sans-serif"
+                  font-size="15" fill="#E8DFC8" letter-spacing="3">QUALITY ROOTS</text>
+                <!-- Tagline -->
+                <text x="90" y="50" text-anchor="middle"
+                  font-family="'Barlow Condensed', sans-serif"
+                  font-size="10" fill="#C9A84C" letter-spacing="2.5" font-weight="700">EST. 2020</text>
+              </svg>
+            </div>
+
+          </div>
+
+          <!-- Card body: image + info -->
+          <div id="card-body">
+
+            <!-- Left panel: product image -->
+            <div id="image-panel">
+              <div id="image-clip-box">
+                <img id="product-img" src="" alt="Product">
+              </div>
+            </div>
+
+            <!-- Center divider -->
+            <div id="panel-divider">
+              <div class="divider-line"></div>
+              <svg class="divider-diamond" viewBox="0 0 20 20" width="20" height="20">
+                <polygon points="10,2 18,10 10,18 2,10" fill="#C9A84C" opacity="0.6"/>
+              </svg>
+              <div class="divider-line"></div>
+            </div>
+
+            <!-- Right panel: product info -->
+            <div id="info-panel">
+
+              <div id="brand-row">
+                <span id="brand-name"></span>
+              </div>
+
+              <div id="name-row">
+                <p id="product-name"></p>
+              </div>
+
+              <div id="meta-row">
+                <span id="strain-pill"></span>
+                <span id="thc-chip"></span>
+              </div>
+
+              <div id="price-block">
+
+                <div id="was-row">
+                  <span class="price-eyebrow">REGULAR PRICE</span>
+                  <div id="was-wrap">
+                    <span id="was-price"></span>
+                    <div id="strike-bar"></div>
+                  </div>
+                </div>
+
+                <div id="now-row">
+                  <span class="price-eyebrow now-eyebrow">TODAY ONLY</span>
+                  <span id="now-price"></span>
+                </div>
+
+              </div>
+
+            </div><!-- /info-panel -->
+
+          </div><!-- /card-body -->
+
+          <!-- 50% OFF rubber stamp overlay -->
+          <div id="deal-stamp">
+            <div id="stamp-outer-ring"></div>
+            <div id="stamp-inner-ring"></div>
+            <div id="stamp-content">
+              <div class="stamp-text-sm stamp-arc-top">LIMITED OFFER</div>
+              <div class="stamp-big-pct">50%</div>
+              <div class="stamp-big-off">OFF</div>
+              <div class="stamp-text-sm stamp-arc-bot">TODAY ONLY</div>
+            </div>
+          </div>
+
+        </div><!-- /stamp-card -->
+      </div><!-- /stamp-wrapper -->
+    </div><!-- /main-stage -->
+
+    <!-- Layer 4: Botanical foreground right (mirrored) -->
+    <div id="fg-right">
+      <img class="botanical"
+        src="https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/n8n-continue%2Faigen-1773303396073%2Fassets%2Fbotanical_leaves_teal-1773304015702.png"
+        alt="">
+    </div>
+
+    <!-- Layer 5: Footer marquee strip -->
+    <div id="footer-strip">
+      <div id="footer-inner">
+        <span class="fi">◆</span>
+        <span class="fi">QUALITY ROOTS</span>
+        <span class="fi">◆</span>
+        <span class="fi">MICHIGAN'S FINEST CANNABIS</span>
+        <span class="fi">◆</span>
+        <span class="fi">GETQUALITYROOTS.COM</span>
+        <span class="fi">◆</span>
+        <span class="fi">QUALITY ROOTS</span>
+        <span class="fi">◆</span>
+        <span class="fi">MICHIGAN'S FINEST CANNABIS</span>
+        <span class="fi">◆</span>
+        <span class="fi">GETQUALITYROOTS.COM</span>
+        <span class="fi">◆</span>
+      </div>
+    </div>
+
+  </div><!-- /scene -->
+
+  <script src="animation.js?v=m8k3r1"></script>
+</body>
+</html>
